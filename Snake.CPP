@@ -13,6 +13,19 @@
 
 randmozie();
 int fx= 50 + rand() % 600 , fy=30 + rand() % 400;
+
+void text3D(int x, int y, int depth, int bgcolor, int fgcolor,int font,int size, char *caption)
+{
+  int i;
+  setcolor(bgcolor);
+  settextstyle(font,HORIZ_DIR,size);
+  for(i=0; i<depth; i++)
+    outtextxy(x+i,y+i,caption);
+  setcolor(fgcolor);
+  outtextxy(x+i,y+i,caption);
+
+}
+
 class snake : public score
 {
 private:
@@ -468,17 +481,5 @@ int snake_menu()
       }
     }
   }
-}
-
-void text3D(int x, int y, int depth, int bgcolor, int fgcolor,int font,int size, char *caption)
-{
-    int i;
-    setcolor(bgcolor);
-    settextstyle(font,HORIZ_DIR,size);
-    for(i=0; i<depth; i++)
-  outtextxy(x+i,y+i,caption);
-    setcolor(fgcolor);
-    outtextxy(x+i,y+i,caption);
-
 }
 
