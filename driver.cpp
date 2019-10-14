@@ -1,11 +1,11 @@
-#include"snake.cpp"
+#include"Snake.cpp"
 
 void main()
 {    
     int know=0,j=1,ch,no_of_players,gd=DETECT,gm,c=WHITE,tough=100;
     char ps[2][15];
     int ee=0;
-    snake jack[2];
+    Snake jack[2];
 
     if(ee==1)
       jack[0].highs_init();
@@ -41,7 +41,7 @@ void main()
 
     do
     {
-  ch=snake_menu();
+  ch=Snake_menu();
   clrscr();
 
   jack[0].init_obj(0);
@@ -64,7 +64,7 @@ void main()
         know=1;
         break;
     }
-    jack[0].display_snake(c,0);
+    jack[0].display_Snake(c,0);
     jack[0].eating(1);
     jack[0].move();
 
@@ -119,7 +119,7 @@ void main()
       sprintf(ps[0],"p1 score:%d",jack[i].scor());
         if(i==1)
       sprintf(ps[1],"p2 score:%d",jack[i].scor());
-        jack[i].display_snake(c,i);
+        jack[i].display_Snake(c,i);
         jack[i].eating(2);
         jack[i].move();
     }
@@ -173,7 +173,7 @@ void main()
       {
          know+=i;
       }
-      jack[i].display_snake(c,i);
+      jack[i].display_Snake(c,i);
       jack[i].move();
       jack[i].eating(2);
         }
